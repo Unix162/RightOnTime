@@ -1,0 +1,515 @@
+/* =========================
+   מיכל האפליקציה הראשי
+   ========================= */
+
+.app-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 24px;
+}
+
+
+/* =========================
+   כותרת המערכת
+   ========================= */
+
+.app-header {
+    background-color: #172554;
+    color: white;
+    padding: 32px;
+    border-radius: 18px;
+    margin-bottom: 24px;
+}
+
+.app-header h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.app-header p {
+    color: #bfdbfe;
+    font-size: 17px;
+}
+
+
+/* =========================
+   אזור סטטיסטיקת משימות
+   ========================= */
+
+.task-stats {
+    margin-bottom: 24px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 14px;
+    border-right: 5px solid;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.07);
+}
+
+.stat-card span {
+    display: block;
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 36px;
+}
+
+/* כרטיס סך המשימות */
+
+.stat-total {
+    border-color: #2563eb;
+}
+
+.stat-total strong {
+    color: #2563eb;
+}
+
+/* כרטיס משימות שהושלמו */
+
+.stat-completed {
+    border-color: #16a34a;
+}
+
+.stat-completed strong {
+    color: #16a34a;
+}
+
+/* כרטיס משימות שנותרו */
+
+.stat-pending {
+    border-color: #d97706;
+}
+
+.stat-pending strong {
+    color: #d97706;
+}
+
+
+/* =========================
+   מד התקדמות
+   ========================= */
+
+.progress-section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 16px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.07);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.progress-header strong {
+    color: #16a34a;
+}
+
+.progress-bar {
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 12px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #e2e8f0;
+}
+
+.progress-bar::-webkit-progress-bar {
+    background-color: #e2e8f0;
+    border-radius: 10px;
+}
+
+.progress-bar::-webkit-progress-value {
+    background-color: #16a34a;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.progress-bar::-moz-progress-bar {
+    background-color: #16a34a;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   תיבת ציטוט השראה
+   ========================= */
+
+.quote-box {
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    color: white;
+    padding: 26px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.quote-box h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.quote-content {
+    text-align: center;
+    margin: 18px 0;
+}
+
+.quote-content blockquote {
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 12px;
+}
+
+.quote-content p {
+    color: #dbeafe;
+}
+
+.quote-box button {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 10px 18px;
+    margin-top: 15px;
+}
+
+.quote-box button:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.quote-error {
+    color: #fef3c7;
+}
+
+
+/* =========================
+   טופס הוספת משימה
+   ========================= */
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: white;
+    padding: 26px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.07);
+}
+
+.task-form h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.task-form label {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.task-form input,
+.task-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background-color: #f8fafc;
+    color: #1e293b;
+    outline: none;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.task-form textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.task-form button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 13px;
+    font-weight: bold;
+}
+
+.task-form button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =========================
+   אזור רשימת המשימות
+   ========================= */
+
+.task-list {
+    background-color: white;
+    padding: 26px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.07);
+}
+
+.task-list h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.task-list > p {
+    text-align: center;
+    color: #64748b;
+    padding: 25px;
+}
+
+
+/* =========================
+   כפתורי סינון
+   ========================= */
+
+.task-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.task-filters button {
+    padding: 10px 18px;
+    border: 1px solid #dbe3ed;
+    border-radius: 8px;
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.task-filters button:hover {
+    background-color: #dbeafe;
+}
+
+.task-filters button.active {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: white;
+}
+
+
+/* =========================
+   כרטיס משימה
+   ========================= */
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-right: 5px solid #3b82f6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+    transition: background-color 0.2s;
+}
+
+.task-details {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.task-details h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.task-details p {
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.task-details span {
+    display: inline-block;
+    font-size: 13px;
+    color: #92400e;
+    background-color: #fef3c7;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+
+/* =========================
+   משימה שהושלמה
+   ========================= */
+
+.task-item.completed {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+    border-right-color: #16a34a;
+}
+
+.task-item.completed h3 {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+.task-item.completed .task-details span {
+    color: #166534;
+    background-color: #dcfce7;
+}
+
+
+/* =========================
+   כפתורי פעולות במשימה
+   ========================= */
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.task-actions button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: white;
+}
+
+/* כפתור השלמת משימה */
+
+.task-actions button:first-child {
+    background-color: #16a34a;
+}
+
+.task-actions button:first-child:hover {
+    background-color: #15803d;
+}
+
+/* כפתור ביטול השלמת משימה */
+
+.task-item.completed .task-actions button:first-child {
+    background-color: #64748b;
+}
+
+/* כפתור מחיקת משימה */
+
+.task-actions button:last-child {
+    background-color: #dc2626;
+}
+
+.task-actions button:last-child:hover {
+    background-color: #b91c1c;
+}
+
+
+/* =========================
+   התאמה למסכים קטנים
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .app-container {
+        padding: 15px;
+    }
+
+    .app-header {
+        padding: 22px;
+    }
+
+    .app-header h1 {
+        font-size: 32px;
+    }
+
+    .task-form,
+    .task-list,
+    .quote-box {
+        padding: 18px;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .task-actions button {
+        flex: 1;
+    }
+
+    .task-filters button {
+        flex: 1;
+    }
+
+    .quote-content blockquote {
+        font-size: 17px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-card strong {
+        font-size: 28px;
+    }
+}
+/* =========================
+   עיצוב לוגו המערכת
+   ========================= */
+
+.app-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.app-logo {
+    width: 85px;
+    height: 85px;
+    flex-shrink: 0;
+}
+
+/* התאמת הלוגו למסכים קטנים */
+
+@media (max-width: 600px) {
+
+    .app-brand {
+        gap: 12px;
+    }
+
+    .app-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .app-brand h1 {
+        font-size: 28px;
+    }
+}
